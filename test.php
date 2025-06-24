@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://abc.com
- * @since             1.0.9
+ * @since             1.0.10
  * @package           Test
  *
  * @wordpress-plugin
  * Plugin Name:       Test
  * Plugin URI:        https://abc.com
  * Description:       testing deployment.
- * Version:           1.0.9
+ * Version:           1.0.10
  * Author:            Test
  * Author URI:        https://abc.com/
  * License:           GPL-2.0+
@@ -32,10 +32,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.9 and use SemVer - https://semver.org
+ * Start at version 1.0.10 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'TEST_VERSION', '1.0.9' );
+define( 'TEST_VERSION', '1.0.10' );
 
 /**
  * The code that runs during plugin activation.
@@ -92,7 +92,7 @@ add_action('admin_init', function () {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.9
+ * @since    1.0.10
  */
 function run_test() {
 
