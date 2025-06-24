@@ -20,15 +20,15 @@ This is the description that appears in the plugin popup under the "Description"
 2. ![Screenshot](assets/screenshot-2.png)
 
 == Changelog ==
+= 1.0.15 =
+* Just testing the updates...
+
 = 1.0.2 =
 * Added GitHub updates
 * Fixed bugs
 
 = 1.0.1 =
 * Initial release
-
-= 1.0.15 =
-* Just testing the updates...
 
 == Frequently Asked Questions ==
 = Will this plugin auto-update? =
