@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://abc.com
- * @since             1.0.6
+ * @since             1.0.7
  * @package           Test
  *
  * @wordpress-plugin
  * Plugin Name:       Test
  * Plugin URI:        https://abc.com
  * Description:       testing deployment.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            Test
  * Author URI:        https://abc.com/
  * License:           GPL-2.0+
@@ -32,10 +32,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.6 and use SemVer - https://semver.org
+ * Start at version 1.0.7 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'TEST_VERSION', '1.0.6' );
+define( 'TEST_VERSION', '1.0.7' );
 
 /**
  * The code that runs during plugin activation.
@@ -80,23 +80,16 @@ $updateChecker = PucFactory::buildUpdateChecker(
 // Optional: Set the branch (default is master/main)
 // $updateChecker->setBranch('main');
 
-// add_filter('auto_update_plugin', 'pt_enable_auto_update_for_this_plugin', 10, 2);
+add_filter('auto_update_plugin', 'pt_enable_auto_update_for_this_plugin', 10, 2);
 
-/**
- * Enable auto updates for this plugin only.
- *
- * @param bool   $update Whether to update the plugin.
- * @param object $item   Plugin data object.
- * @return bool
- */
 function pt_enable_auto_update_for_this_plugin($update, $item) {
-    $this_plugin = plugin_basename(__FILE__);
+    $plugin_basename = plugin_basename(__FILE__);
 
-    if ($item->plugin === $this_plugin) {
-        return true; // Force auto-update for this plugin
+    if ($item->plugin === $plugin_basename) {
+        return true; // Force auto-update
     }
 
-    return $update; // Respect default for other plugins
+    return $update;
 }
 
 
@@ -107,7 +100,7 @@ function pt_enable_auto_update_for_this_plugin($update, $item) {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.6
+ * @since    1.0.7
  */
 function run_test() {
 
