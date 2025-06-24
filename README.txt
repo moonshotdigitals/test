@@ -27,6 +27,9 @@ This is the description that appears in the plugin popup under the "Description"
 = 1.0.1 =
 * Initial release
 
+= 1.0.15 =
+* Just testing the updates...
+
 == Frequently Asked Questions ==
 = Will this plugin auto-update? =
 Yes, if connected to GitHub properly.
