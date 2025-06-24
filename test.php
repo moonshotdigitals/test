@@ -80,19 +80,6 @@ $updateChecker = PucFactory::buildUpdateChecker(
 // Optional: Set the branch (default is master/main)
 // $updateChecker->setBranch('main');
 
-add_filter('auto_update_plugin', 'pt_enable_auto_update_for_this_plugin', 10, 2);
-
-function pt_enable_auto_update_for_this_plugin($update, $item) {
-    $plugin_basename = plugin_basename(__FILE__);
-
-    if ($item->plugin === $plugin_basename) {
-        return true; // Force auto-update
-    }
-
-    return $update;
-}
-
-
 /**
  * Begins execution of the plugin.
  *
