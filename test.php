@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://abc.com
- * @since             1.0.11
+ * @since             1.0.12
  * @package           Test
  *
  * @wordpress-plugin
  * Plugin Name:       Test
  * Plugin URI:        https://abc.com
  * Description:       testing deployment.
- * Version:           1.0.11
+ * Version:           1.0.12
  * Author:            Test
  * Author URI:        https://abc.com/
  * License:           GPL-2.0+
@@ -32,10 +32,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.11 and use SemVer - https://semver.org
+ * Start at version 1.0.12 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'TEST_VERSION', '1.0.11' );
+define( 'TEST_VERSION', '1.0.12' );
 
 /**
  * The code that runs during plugin activation.
@@ -74,11 +74,6 @@ $updateChecker = PucFactory::buildUpdateChecker(
     'test'
 );
 
-add_action('admin_init', function () use ($updateChecker) {
-    if (current_user_can('update_plugins')) {
-        $updateChecker->checkForUpdates();
-    }
-});
 // Optional: If your repo is private, set authentication
 // $updateChecker->setAuthentication('your_github_token');
 
@@ -92,7 +87,7 @@ add_action('admin_init', function () use ($updateChecker) {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.11
+ * @since    1.0.12
  */
 function run_test() {
 
