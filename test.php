@@ -64,6 +64,23 @@ register_deactivation_hook( __FILE__, 'deactivate_test' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-test.php';
 
+require_once plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$updateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/moonshotdigitals/test',
+    __FILE__,
+    'test'
+);
+
+// Optional: If your repo is private, set authentication
+// $updateChecker->setAuthentication('your_github_token');
+
+// Optional: Set the branch (default is master/main)
+// $updateChecker->setBranch('main');
+
+
 add_filter('auto_update_plugin', function ($update, $item) {
     if ($item->plugin === plugin_basename(__FILE__)) {
         return true;
